@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 
 import javax.naming.spi.DirStateFactory.Result;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
