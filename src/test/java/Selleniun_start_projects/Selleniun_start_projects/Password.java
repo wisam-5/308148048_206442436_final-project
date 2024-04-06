@@ -87,6 +87,16 @@ public class Password {
 	    assertEquals(expected, result);
 	}
 	
+	@Test
+	public void invalidInputTest3() {
+	    browser.findElement(By.name("characters")).sendKeys("abc&567");
+	    browser.findElement(By.name("validate")).click();
+	    
+	    String expected = "invalid Value";
+	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
+	    assertEquals(expected, result);
+	}
+	
 	
 
 
