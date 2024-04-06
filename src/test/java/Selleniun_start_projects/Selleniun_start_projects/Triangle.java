@@ -63,6 +63,19 @@ public class Triangle {
 	    String result = browser.findElement(By.className("answer")).getText();
 	    assertEquals(expected, result);
 	}
+	
+	@Test
+	public void invalidTriangleTest() {
+	    browser.findElement(By.id("side1")).sendKeys("4");
+	    browser.findElement(By.id("side2")).sendKeys("5");
+	    browser.findElement(By.id("side3")).sendKeys("9");
+	    browser.findElement(By.id("identify-triangle-action")).click();
+	    
+	    String expected = "Error: Not a Triangle";
+	    String result = browser.findElement(By.className("answer")).getText();
+	    assertEquals(expected, result);
+	}
+	
 	  
 	
 }
