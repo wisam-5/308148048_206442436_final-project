@@ -110,5 +110,21 @@ public class Selenium_calculator {
 	    assertEquals("Infinity", result); 
 	}
 	
+	@Test
+	public void decimalMultiplicationTest() {
+	    browser.findElement(By.id("button01")).click();
+	    browser.findElement(By.id("buttonplus")).click();
+	    browser.findElement(By.id("button05")).click();
+	    browser.findElement(By.id("buttonmultiply")).click();
+	    browser.findElement(By.id("button02")).click();
+	    try {
+	        Thread.sleep(1000);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
+	    browser.findElement(By.id("buttonequals")).click();
+	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+	    assertEquals("12", result);
+	}
 
 }
