@@ -79,4 +79,19 @@ public class Selenium_calculator {
 	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 	    assertEquals("10", result);
 	}
+	
+	@Test
+	public void divisionTest() {
+	    browser.findElement(By.id("button06")).click();
+	    browser.findElement(By.id("buttondivide")).click();
+	    browser.findElement(By.id("button03")).click();
+	    try {
+	        Thread.sleep(1000);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
+	    browser.findElement(By.id("buttonequals")).click();
+	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+	    assertEquals("2", result);
+	}
 }
