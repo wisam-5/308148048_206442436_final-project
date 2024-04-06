@@ -39,6 +39,18 @@ public class Triangle {
 	   String result = browser.findElement(By.className("answer")).getText();
 	   assertEquals(expected, result);
 	}
+	
+	@Test
+	public void isoscelesTriangleTest() {
+	    browser.findElement(By.id("side1")).sendKeys("5");
+	    browser.findElement(By.id("side2")).sendKeys("5");
+	    browser.findElement(By.id("side3")).sendKeys("3");
+	    browser.findElement(By.id("identify-triangle-action")).click();
+	    
+	    String expected = "Isosceles";
+	    String result = browser.findElement(By.className("answer")).getText();
+	    assertEquals(expected, result);
+	}
 	  
 	
 }
