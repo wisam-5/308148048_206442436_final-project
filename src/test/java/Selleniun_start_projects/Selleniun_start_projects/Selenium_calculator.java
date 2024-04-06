@@ -94,4 +94,21 @@ public class Selenium_calculator {
 	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 	    assertEquals("2", result);
 	}
+	
+	@Test
+	public void divisionByZeroTest() {
+	    browser.findElement(By.id("button01")).click();
+	    browser.findElement(By.id("buttondivide")).click();
+	    browser.findElement(By.id("button00")).click();
+	    try {
+	        Thread.sleep(1000);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
+	    browser.findElement(By.id("buttonequals")).click();
+	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+	    assertEquals("Infinity", result); 
+	}
+	
+
 }
