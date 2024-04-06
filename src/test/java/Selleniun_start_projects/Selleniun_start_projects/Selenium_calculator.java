@@ -141,6 +141,22 @@ public class Selenium_calculator {
 	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 	    assertEquals("3.5", result);
 	}
+	
+	@Test
+	public void negativeResultTest() {
+	    browser.findElement(By.id("button03")).click();
+	    browser.findElement(By.id("buttonminus")).click();
+	    browser.findElement(By.id("button05")).click();
+	    try {
+	        Thread.sleep(1000);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
+	    browser.findElement(By.id("buttonequals")).click();
+	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+	    assertEquals("-2", result);
+	}
+
 
 
 }
