@@ -46,6 +46,16 @@ public class Password {
 	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
 	    assertEquals(expected, result);
 	}
+	
+	@Test
+	public void emptyInputTest() {
+	    browser.findElement(By.name("characters")).sendKeys("");
+	    browser.findElement(By.name("validate")).click();
+	    
+	    String expected = "Invalid Value";
+	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
+	    assertEquals(expected, result);
+	}
 
 }
 
