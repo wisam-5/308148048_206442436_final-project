@@ -101,6 +101,20 @@ public class Triangle {
 	    assertEquals(expected, result);
 	}
 	
+	@Test
+	public void scaleneTriangleTest2() {
+	    browser.findElement(By.id("side1")).sendKeys("10");
+	    browser.findElement(By.id("side2")).sendKeys("13");
+	    browser.findElement(By.id("side3")).sendKeys("21");
+	    browser.findElement(By.id("identify-triangle-action")).click();
+	    
+	    String expected = "Scalene";
+	    String result = browser.findElement(By.className("answer")).getText();
+	    assertEquals(expected, result);
+	}
+	
+	
+	
 	  
 	
 }
