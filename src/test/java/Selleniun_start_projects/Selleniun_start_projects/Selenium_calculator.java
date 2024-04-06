@@ -156,6 +156,22 @@ public class Selenium_calculator {
 	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 	    assertEquals("-2", result);
 	}
+	
+	@Test
+	public void positiveNumbersAdditionTest() {
+	    browser.findElement(By.id("button08")).click();
+	    browser.findElement(By.id("buttonplus")).click();
+	    browser.findElement(By.id("button05")).click();
+	    try {
+	        Thread.sleep(1000);
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
+	    browser.findElement(By.id("buttonequals")).click();
+	    String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+	    assertEquals("13", result);
+	}
+
 
 
 
