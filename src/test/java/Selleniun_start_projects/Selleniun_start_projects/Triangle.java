@@ -149,6 +149,18 @@ public class Triangle {
 	    assertEquals(expected, result);
 	}
 	
+	@Test
+	public void errorTriangleTest1() {
+	    browser.findElement(By.id("side1")).sendKeys("a");
+	    browser.findElement(By.id("side2")).sendKeys("1");
+	    browser.findElement(By.id("side3")).sendKeys("2");
+	    browser.findElement(By.id("identify-triangle-action")).click();
+	    
+	    String expected = "Error: Side 1 is not a Number";
+	    String result = browser.findElement(By.className("answer")).getText();
+	    assertEquals(expected, result);
+	}
+	
 	
 	
 	  
