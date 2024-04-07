@@ -61,7 +61,7 @@ public class Password {
 	    browser.findElement(By.name("characters")).sendKeys("Abc123*");
 	    browser.findElement(By.name("validate")).click();
 	    
-	    String expected = "valid Value";
+	    String expected = "Valid Value";
 	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
 	    assertEquals(expected, result);
 	}
@@ -71,7 +71,7 @@ public class Password {
 	    browser.findElement(By.name("characters")).sendKeys("a*34^*7");
 	    browser.findElement(By.name("validate")).click();
 	    
-	    String expected = "valid Value";
+	    String expected = "Valid Value";
 	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
 	    assertEquals(expected, result);
 	}
@@ -81,7 +81,7 @@ public class Password {
 	    browser.findElement(By.name("characters")).sendKeys("abc34");
 	    browser.findElement(By.name("validate")).click();
 	    
-	    String expected = "invalid Value";
+	    String expected = "Invalid Value";
 	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
 	    assertEquals(expected, result);
 	}
@@ -91,10 +91,21 @@ public class Password {
 	    browser.findElement(By.name("characters")).sendKeys("abc&567");
 	    browser.findElement(By.name("validate")).click();
 	    
-	    String expected = "invalid Value";
+	    String expected = "Invalid Value";
 	    String result = browser.findElement(By.name("validation_message")).getAttribute("value");
 	    assertEquals(expected, result);
 	}
+	
+	@Test
+	public void t8() {
+		browser.findElement(By.name("characters")).sendKeys("WISAM");
+		browser.findElement(By.name("validate")).click();
+		
+		String expected = "Invalid Value";
+		String Result = browser.findElement(By.name("validation_message")).getAttribute("value");
+		assertEquals(expected, Result);
+	}
+	
 	
 	
 
