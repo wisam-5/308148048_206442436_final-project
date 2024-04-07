@@ -137,6 +137,16 @@ public class Password {
 	}
 	
 	
+	@Test
+	public void t12() {
+		browser.findElement(By.name("characters")).sendKeys("joasfsASAD532");
+		browser.findElement(By.name("validate")).click();
+		
+		String expected = "Invalid Value";
+		String Result = browser.findElement(By.name("validation_message")).getAttribute("value");
+		assertEquals(expected, Result);
+	}
+	
 	
 	
 	
